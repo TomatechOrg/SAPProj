@@ -1,16 +1,12 @@
 <div id="<%= dom_id review %>">
   <p>
     <strong>Title:</strong>
-    <%== review.title %>
+    <%= review.title %>
   </p>
 
   <p>
     <strong>Body:</strong>
     <%= review.body %>
-  </p>
-
-  <p span style="display: none">
-    <strong>User:</strong> <%= review.user.username %>( <%= review.user.email %> )
   </p>
 
 </div>

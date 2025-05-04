@@ -6,8 +6,7 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
     if params[:search] && params[:search] != ""
-      sql = "SELECT * FROM reviews WHERE title LIKE '"+params[:search]+"%'"
-      @reviews = ActiveRecord::Base.connection.execute(sql)
+      @reviews = @reviews.where("title LIKE ?", "#{params[:search]}%")
     end
   end
 
