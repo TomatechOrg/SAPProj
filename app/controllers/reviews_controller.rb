@@ -7,8 +7,9 @@ class ReviewsController < ApplicationController
     @reviews = Review.all
     if params[:search] && params[:search] != ""
       sql = "SELECT * FROM reviews WHERE title LIKE '"+params[:search]+"%'"
-      @reviews = ActiveRecord::Base.connection.execute(sql)
+      @reviews = ActiveRecord::Base.connection.execute(sql).map { Review.new _1 }
     end
+    p @reviews
   end
 
   # GET /reviews/1 or /reviews/1.json
