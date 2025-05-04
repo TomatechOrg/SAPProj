@@ -1,7 +1,7 @@
 <div id="<%= dom_id review %>">
   <p>
     <strong>Title:</strong>
-    <%= review.title %>
+    <%== review.title %>
   </p>
 
   <p>
@@ -10,8 +10,7 @@
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= review.user_id %>
+    <strong>User:</strong> <%= review.user.username %> <span style="display: none">( <%= review.user.email %> )</span>
   </p>
 
 </div>

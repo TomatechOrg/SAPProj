@@ -4,6 +4,12 @@
 
 <h1>Reviews</h1>
 
+<%= form_tag "/reviews", method: "GET" do %>
+  <%= label_tag :search %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
 <div id="reviews">
   <% @reviews.each do |review| %>
     <%= render review %>
